@@ -20,6 +20,6 @@ export class ConfirmPage {
     await expect(modal).toBeVisible();
     await expect(modal.getByRole('heading', { name: '予約を完了しました' })).toBeVisible();
     await modal.getByRole('button', { name: '閉じる' }).click();
-    await expect(modal).toBeHidden();
+    await expect(this.page).toHaveURL(/\/plans\.html/);
   }
 }
